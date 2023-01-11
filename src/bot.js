@@ -30,3 +30,9 @@ client.handleEvents();
 client.handleCommands();
 client.handleComponents();
 client.login(token);
+
+client.on("messageCreate", (message) => {
+  if (message.content == "sa") {
+    message.reply("Cami mi burası orospu çocuğu");
+  }
+});

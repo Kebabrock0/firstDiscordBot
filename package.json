@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/bot.js",
   "scripts": {
-    "test": "node ."
+    "test": "node .",
+    "start:dev": "nodemon ./src/bot.js",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "rabbit",
@@ -16,6 +18,12 @@
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
     "htmlparser": "^1.7.7",
-    "htmlparser2": "^8.0.1"
+    "htmlparser2": "^8.0.1",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "nodemon": "^2.0.20"
   }
 }
