@@ -1,4 +1,6 @@
+require("dotenv").config();
 const { REST } = require("@discordjs/rest");
+const { client_id, guild_id } = process.env;
 const { Routes } = require("discord-api-types/v10");
 const fs = require("fs");
 
@@ -17,15 +19,13 @@ module.exports = (client) => {
         commandArray.push(command.data.toJSON());
       }
     }
-    const clientId = "1057993629358096404";
-    const guildId = "1030834595299610754";
 
     const rest = new REST({ version: "10" }).setToken(process.env.token);
 
     try {
       console.log("Started refreshing application (/) commands.");
 
-      await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
+      await rest.put(Routes.applicationGuildCommands(client_id, guild_id), {
         body: client.commandArray,
       });
 
